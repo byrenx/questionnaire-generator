@@ -1,8 +1,12 @@
 {
   "name": "questionnaire-generator",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Questionnaire set generator library",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "engines": {
+    "node": "14"
+  },
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"

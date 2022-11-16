@@ -21,9 +21,9 @@ export const generateQuestionnaireSets = (
   const generateSingleSet = () => {
     const questionnairesMap = generateQuestionDiffultyMap();
     let questionnaires: Question[] = [];
-    const { distribution, itemsPerSet } = config;
+    const { distribution } = config;
     for (const key in distribution) {
-      const items = itemsPerSet * (distribution[key] / 100);
+      const items = distribution[key];
       const randomQuestions = sampleSize(questionnairesMap[key], items);
       questionnaires.push(...randomQuestions);
     }
