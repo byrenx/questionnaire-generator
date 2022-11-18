@@ -1,5 +1,5 @@
 {
-  "name": "questionnaire-generator",
+  "name": "@byrenx/questionnaire-generator",
   "version": "0.0.1",
   "description": "Questionnaire set generator library",
   "main": "./lib/index.js",
