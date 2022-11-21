@@ -1,17 +1,21 @@
-export type QuestionDifficulty = "easy" | "moderate" | "hard";
-
-export type QuestionType = "multiple-choice" | "binary" | "open";
+export enum QuestionDifficulty {
+  REMEMBERING = "remembering",
+  UNDERSTANDING = "understanding",
+  APPLYING = "applying",
+  EVALUATING = "evaluating",
+}
 
 export interface Question {
-  questionContent: string;
+  question: string;
   difficulty: QuestionDifficulty;
-  questionType: QuestionType;
-  options?: string[];
+  choices: string[];
 }
 
 export class Question {
   public constructor(data: Partial<Question>) {
-    Object.assign(this, data);
+    this.question = data.question || "";
+    this.difficulty = data.difficulty || QuestionDifficulty.REMEMBERING;
+    this.choices = data.choices || [];
   }
 }
 
