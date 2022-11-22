@@ -1,9 +1,8 @@
-export enum QuestionDifficulty {
-  REMEMBERING = "remembering",
-  UNDERSTANDING = "understanding",
-  APPLYING = "applying",
-  EVALUATING = "evaluating",
-}
+export type QuestionDifficulty =
+  | "remembering"
+  | "understanding"
+  | "applying"
+  | "evaluating";
 
 export interface Question {
   question: string;
@@ -14,7 +13,7 @@ export interface Question {
 export class Question {
   public constructor(data: Partial<Question>) {
     this.question = data.question || "";
-    this.difficulty = data.difficulty || QuestionDifficulty.REMEMBERING;
+    this.difficulty = data.difficulty || "remembering";
     this.choices = data.choices || [];
   }
 }
