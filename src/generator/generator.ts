@@ -18,13 +18,14 @@ export const generateQuestionnaireSets = (
     return questionsMapping;
   };
 
-  const generateSingleSet = () => {
-    const questionnairesMap = generateQuestionDiffultyMap();
+  const generateSingleSet = (questionsMapping: {
+    [key: string]: Question[];
+  }) => {
     let questionnaires: Question[] = [];
     const { distribution } = config;
     for (const key in distribution) {
-      const items = distribution[key];
-      const randomQuestions = sampleSize(questionnairesMap[key], items);
+      const items = +distribution[key];
+      const randomQuestions = sampleSize(questionsMapping[key], items);
       questionnaires.push(...randomQuestions);
     }
     return questionnaires;
@@ -34,10 +35,12 @@ export const generateQuestionnaireSets = (
   let setKey: number = 65; //A
   // iterate per set
   const { sets } = config;
+  const questionsMapping = generateQuestionDiffultyMap();
+
   for (let index = 0; index < sets; index++) {
     const key = String.fromCharCode(setKey);
 
-    questionnaireSets[key] = generateSingleSet();
+    questionnaireSets[key] = generateSingleSet(questionsMapping);
     setKey += 1;
   }
 
