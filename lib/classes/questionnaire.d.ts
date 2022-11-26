@@ -1,10 +1,8 @@
-export declare type QuestionDifficulty = "easy" | "moderate" | "hard";
-export declare type QuestionType = "multiple-choice" | "binary" | "open";
+export declare type QuestionDifficulty = "remembering" | "understanding" | "applying" | "evaluating";
 export interface Question {
-    questionContent: string;
+    question: string;
     difficulty: QuestionDifficulty;
-    questionType: QuestionType;
-    options?: string[];
+    choices: string[];
 }
 export declare class Question {
     constructor(data: Partial<Question>);
