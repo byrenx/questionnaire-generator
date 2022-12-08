@@ -1,8 +1,9 @@
 export type QuestionDifficulty =
-  | "remembering"
-  | "understanding"
-  | "applying"
-  | "evaluating";
+  | "Remembering"
+  | "Understanding"
+  | "Applying"
+  | "Evaluating"
+  | "Creating";
 
 export interface Question {
   question: string;
@@ -13,7 +14,7 @@ export interface Question {
 export class Question {
   public constructor(data: Partial<Question>) {
     this.question = data.question || "";
-    this.difficulty = data.difficulty || "remembering";
+    this.difficulty = data.difficulty || "Remembering";
     this.choices = data.choices || [];
   }
 }
