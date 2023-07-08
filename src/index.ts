@@ -1,2 +1,2 @@
-export * from "./classes";
-export * from "./generator";
+export * from './models';
+export * from './generator';
