@@ -1,4 +1,4 @@
-import { Question, QuestionnaireGeneratorConfig } from '../classes';
+import { Question, QuestionnaireGeneratorConfig } from '../models';
 import { sampleSize } from 'lodash';
 
 export const generateQuestionnaireSets = (questions: Question[], config: QuestionnaireGeneratorConfig) => {
